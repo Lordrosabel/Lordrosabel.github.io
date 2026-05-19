@@ -1752,7 +1752,7 @@ body {
   background: var(--global-bg);
   color: var(--font-color);
   font-size: var(--global-font-size);
-  font-family: "PingFang SC", "Source Han Sans CN", sans-serif;
+  font-family: "Source Han Sans CN", "PingFang SC", sans-serif;
   line-height: 2;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   scroll-behavior: smooth;
@@ -1881,7 +1881,7 @@ a:hover {
 .site-name,
 #aside-content .author-info-name,
 #aside-content .author-info-description {
-  font-family: "Noto Serif SC", "Source Han Serif CN", serif;
+  font-family: "Alibaba PuHuiTi", "Noto Serif SC", "Source Han Serif CN", serif;
 }
 .text-center {
   text-align: center;
@@ -2056,7 +2056,7 @@ figure.highlight pre .javascript .function {
 .container pre,
 .container code {
   font-size: var(--global-font-size);
-  font-family: consolas !important;
+  font-family: consolas, "Sarasa Fixed SC" !important;
   border-radius: 6px;
 }
 .container code {
