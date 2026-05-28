@@ -1,0 +1,204 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><link rel="stylesheet" href="/css/custom.css"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>AtCoder 做题记录（26 年 5 月） | Magic Garden</title><meta name="author" content="Rosabel,3794223737@qq.com"><meta name="copyright" content="Rosabel"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="Children Yearn for the Evil Kindergarten来源：AT_abc458_g 难度：**2831** 这道题把我困扰了好久，然后写这篇题解的当天下午发现自己理解错题了。然后就会了这种写法。 本写法为 slope trick + deque 优化，线性。听说有二分、贪心的做法，可以参考官方题解。这里就不做赘述了。 换一个角度考虑问题，即我们可以把这个看起来有点复杂的规">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AtCoder 做题记录（26 年 5 月）">
+<meta property="og:url" content="https://magicgarden.fun/2026/05/25/AtCoder001/index.html">
+<meta property="og:site_name" content="Magic Garden">
+<meta property="og:description" content="Children Yearn for the Evil Kindergarten来源：AT_abc458_g 难度：**2831** 这道题把我困扰了好久，然后写这篇题解的当天下午发现自己理解错题了。然后就会了这种写法。 本写法为 slope trick + deque 优化，线性。听说有二分、贪心的做法，可以参考官方题解。这里就不做赘述了。 换一个角度考虑问题，即我们可以把这个看起来有点复杂的规">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://magicgarden.fun/img/atcoder.png">
+<meta property="article:published_time" content="2026-05-25T08:12:05.000Z">
+<meta property="article:modified_time" content="2026-05-25T08:12:05.000Z">
+<meta property="article:author" content="Rosabel">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://magicgarden.fun/img/atcoder.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AtCoder 做题记录（26 年 5 月）",
+  "url": "https://magicgarden.fun/2026/05/25/AtCoder001/",
+  "image": "https://magicgarden.fun/img/atcoder.png",
+  "datePublished": "2026-05-25T08:12:05.000Z",
+  "dateModified": "2026-05-25T08:12:05.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Rosabel",
+      "url": "https://magicgarden.fun"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://magicgarden.fun/2026/05/25/AtCoder001/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'medium_zoom',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'AtCoder 做题记录（26 年 5 月）',
+  isHighlightShrink: true,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap" rel="stylesheet"><style> body,.post-content,p,li{font-family:"Titillium Web","Source Han Sans CN","PingFang SC",sans-serif!important;line-height:1.75;} h1,h2,h3,h4,h5,h6{font-family:"Alibaba PuHuiTi","Noto Serif SC","Source Han Serif CN",serif!important;font-weight:600;} pre,code,.hljs{font-family:Consolas,"Sarasa Fixed SC",monospace!important;} </style><style>:root {
+  --theme-color: #36D399 !important;
+  --theme-color-hover: #28B67E !important;
+  --btn-color: #36D399 !important;
+}
+* {
+  --heo-theme: #36D399 !important;
+}</style><meta name="generator" content="Hexo 7.3.0"></head><body><div class="bg-animation" id="web_bg" style="background-image: url(/img/background2.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-code"></i><span> 编程</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/algorithm/"><i class="fa-fw fas fa-sitemap"></i><span> 算法</span></a></li><li><a class="site-page child" href="/math/"><i class="fa-fw fas fa-calculator"></i><span> 数学</span></a></li><li><a class="site-page child" href="/codeforces/"><i class="fa-fw fas fa-chart-bar"></i><span> CF</span></a></li><li><a class="site-page child" href="/atcoder/"><i class="fa-fw fas fa-terminal"></i><span> AT</span></a></li><li><a class="site-page child" href="/icpc/"><i class="fa-fw fas fa-trophy"></i><span> ICPC</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-edit"></i><span> 说说</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/diary/"><i class="fa-fw fas fa-book"></i><span> 日记</span></a></li><li><a class="site-page child" href="/travelogue/"><i class="fa-fw fas fa-map-marked-alt"></i><span> 游记</span></a></li><li><a class="site-page child" href="/chatter/"><i class="fa-fw fas fa-pen-nib"></i><span> 杂谈</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-list"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/atcoder.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/img/Rosabel.png" alt="Logo"><span class="site-name">Magic Garden</span></a><a class="nav-page-title" href="/"><span class="site-name">AtCoder 做题记录（26 年 5 月）</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-code"></i><span> 编程</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/algorithm/"><i class="fa-fw fas fa-sitemap"></i><span> 算法</span></a></li><li><a class="site-page child" href="/math/"><i class="fa-fw fas fa-calculator"></i><span> 数学</span></a></li><li><a class="site-page child" href="/codeforces/"><i class="fa-fw fas fa-chart-bar"></i><span> CF</span></a></li><li><a class="site-page child" href="/atcoder/"><i class="fa-fw fas fa-terminal"></i><span> AT</span></a></li><li><a class="site-page child" href="/icpc/"><i class="fa-fw fas fa-trophy"></i><span> ICPC</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-edit"></i><span> 说说</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/diary/"><i class="fa-fw fas fa-book"></i><span> 日记</span></a></li><li><a class="site-page child" href="/travelogue/"><i class="fa-fw fas fa-map-marked-alt"></i><span> 游记</span></a></li><li><a class="site-page child" href="/chatter/"><i class="fa-fw fas fa-pen-nib"></i><span> 杂谈</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-list"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">AtCoder 做题记录（26 年 5 月）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-05-25T08:12:05.000Z" title="发表于 2026-05-25 16:12:05">2026-05-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-05-25T08:12:05.000Z" title="更新于 2026-05-25 16:12:05">2026-05-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/atcoder/">atcoder</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">1.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h3 id="Children-Yearn-for-the-Evil-Kindergarten"><a href="#Children-Yearn-for-the-Evil-Kindergarten" class="headerlink" title="Children Yearn for the Evil Kindergarten"></a>Children Yearn for the Evil Kindergarten</h3><p>来源：AT_abc458_g</p>
+<p>难度：**<font color='red'>2831</font>**</p>
+<p>这道题把我困扰了好久，然后写这篇题解的当天下午发现自己理解错题了。然后就会了这种写法。</p>
+<p>本写法为 slope trick + deque 优化，线性。听说有二分、贪心的做法，可以参考官方题解。这里就不做赘述了。</p>
+<p>换一个角度考虑问题，即我们可以把这个看起来有点复杂的规划问题转换成“填小孩”<del>这里用词是不是有点不当</del>的问题，即在奖牌形态固定的情况下，每个小孩在第 $i$ 天 <strong>escape</strong> 的代价为 $b_1+b_2+\dots+b_{i-1}+(b_i+c_i)$。看起来似乎可以动态规划。这里的 $i$ 个加项分别依次对应第 $1$ 天到第 $i$ 天的代价。注意这里第 $j$ 天的奖牌第 $j$ 天到第 $n$ 天都能使用，所以要加一维奖牌数。</p>
+<p>那么现在我们梳理一下 dp 维度，天数一维，小孩总数一维，小孩结束个数一维，转移一维，奖牌一维，哇似乎是五维的，把奖牌一维固定下来即维护每个状态最小消耗奖牌数也是四维的，这也太不好做了。唉，正难则反嘛，我们倒过来遍历，对于结束个数和总数就可以当做是同一维度的了。即，当前只需要知道第 $i$ 天及以后结束的小朋友个数，对于前面结束的小朋友是之后遍历的内容，暂时不用管。那么就可以消掉一维啦！</p>
+<p>现在得到一个状态 $O(n^2)$ ，时间 $O(n^3)$ 的做法，对于 $f_{i,j}$ 表示第 $i$ 天以后共有 $j$ 个小朋友 <strong>escape</strong>，还需要从前 $i-1$ 天里面借的最少奖牌数。注意转移的时候第 $i$ 天可能有若干个小朋友结束，所以时间多了一维。</p>
+<p>我们发现这就是个最优化取 $k$ 物品价值和问题，不难证明 $f_i$ 函数是单调递增且下凸的。所以我们考虑 slope trick。先推导出题目条件和约束：</p>
+<ul>
+<li>如果第 $i$ 天以后共有 $j$ 个小朋友 <strong>escape</strong>，那么前 $i-1$ 天剩下留到后面的奖牌数至少是 $j\sum_{1\le p\lt i-1}a_p$ 块。这个信息是最重要的，也是奖牌数个数限制的充要条件。</li>
+<li>对于每天新增 $a_i$ 块奖牌对于 $f_i$ 的影响是所有元素减去 $a_i$ 和 $0$ 取 $\max$。</li>
+<li>对于每多一个小孩，$f_{i,j}$ 会和 $f_{i+1,j-1}+(\sum_{1\le p\le i}b_p)+c_i$ 取 $\min$。</li>
+</ul>
+<p>我们注意到对于第三条而言相当于和一条直线做 $(\min,+)$ 卷积，第二条是整体平移然后局部清零，第一条相当于是和 $l:y&#x3D;(\sum_{1\le p\lt i-1}a_p)x$ 取 $\max$。于是我们想到取维护斜率，然后做区间覆盖，维护区间值并支持查询与线任意一条线段 $x$ 固定的大小。当然用线段树上二分是可以的，不过用 deque 维护同斜率线段可以做到线性。</p>
+<p>ps：其实我之前把题目理解成少于 $b_i$ 的小朋友奖牌清零而不用 <strong>drop out</strong>，这似乎就可以用一个单调栈去维护了，反而更简单。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ll <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> n=<span class="built_in">read</span>(),m=<span class="number">1e6</span><span class="number">+1</span>;</span><br><span class="line">	<span class="built_in">REP</span>(i,<span class="number">1</span>,n)a[i]=<span class="built_in">read</span>(),b[i]=<span class="built_in">read</span>()+b[i<span class="number">-1</span>],c[i]=<span class="built_in">read</span>(),A[i]=A[i<span class="number">-1</span>]+a[i];</span><br><span class="line">	deque&lt;pl&gt;q; <span class="comment">// length and slope</span></span><br><span class="line">	<span class="built_in">PER</span>(i,n,<span class="number">1</span>)&#123;</span><br><span class="line">		ll v=b[i]+c[i];</span><br><span class="line">		<span class="type">int</span> sum=m*(i==n);</span><br><span class="line">		<span class="keyword">while</span>(!q.<span class="built_in">empty</span>()&amp;&amp;q.<span class="built_in">back</span>().se&gt;=v)&#123;</span><br><span class="line">			sum+=q.<span class="built_in">back</span>().fi;</span><br><span class="line">			q.<span class="built_in">pop_back</span>();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(sum)q.<span class="built_in">push_back</span>(<span class="built_in">mkp</span>(sum,v));</span><br><span class="line">		sum=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(a[i])&#123;</span><br><span class="line">			ll x=q.<span class="built_in">front</span>().fi,y=q.<span class="built_in">front</span>().se;</span><br><span class="line">			q.<span class="built_in">pop_front</span>();</span><br><span class="line">			<span class="keyword">if</span>(x*y&lt;=a[i])&#123;</span><br><span class="line">				a[i]-=x*y;</span><br><span class="line">				sum+=x;</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			ll s=x*y-a[i];</span><br><span class="line">			sum+=x-s/y-(s%y&gt;<span class="number">0</span>);</span><br><span class="line">			<span class="keyword">if</span>(s&gt;=y)q.<span class="built_in">push_front</span>(<span class="built_in">mkp</span>(s/y,y));</span><br><span class="line">			<span class="keyword">if</span>(s%y)q.<span class="built_in">push_front</span>(<span class="built_in">mkp</span>(<span class="number">1</span>,s%y));</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(sum)q.<span class="built_in">push_front</span>(<span class="built_in">mkp</span>(sum,<span class="number">0</span>));</span><br><span class="line">		sum=<span class="number">0</span>;v=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(!q.<span class="built_in">empty</span>()&amp;&amp;(!sum||b[i<span class="number">-1</span>]*sum&gt;v))&#123;</span><br><span class="line">			ll x=q.<span class="built_in">front</span>().fi,y=q.<span class="built_in">front</span>().se;</span><br><span class="line">			<span class="keyword">if</span>(!sum&amp;&amp;y&gt;=b[i<span class="number">-1</span>])<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">if</span>(b[i<span class="number">-1</span>]*(sum+x)&gt;=v+x*y)&#123;</span><br><span class="line">				sum+=x;</span><br><span class="line">				v+=x*y;</span><br><span class="line">				q.<span class="built_in">pop_front</span>();</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			ll val=(b[i<span class="number">-1</span>]*sum-v)/(y-b[i<span class="number">-1</span>]);</span><br><span class="line">			sum+=val;</span><br><span class="line">			q.<span class="built_in">front</span>().fi-=val;</span><br><span class="line">			v+=y*val;</span><br><span class="line">			<span class="keyword">if</span>(b[i<span class="number">-1</span>]*sum==v)<span class="keyword">continue</span>;</span><br><span class="line">			<span class="keyword">if</span>(q.<span class="built_in">front</span>().fi==<span class="number">1</span>)q.<span class="built_in">front</span>().se-=b[i<span class="number">-1</span>]*sum-v;</span><br><span class="line">			<span class="keyword">else</span>&#123;</span><br><span class="line">				q.<span class="built_in">front</span>().fi--;</span><br><span class="line">				q.<span class="built_in">push_front</span>(<span class="built_in">mkp</span>(<span class="number">1</span>,y-(b[i<span class="number">-1</span>]*sum-v)));</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(sum)q.<span class="built_in">push_front</span>(<span class="built_in">mkp</span>(sum,b[i<span class="number">-1</span>]));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> q.<span class="built_in">front</span>().fi*(!q.<span class="built_in">front</span>().se); <span class="comment">// remember to update</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果有误，或者更好的解法，欢迎私信骚扰。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://magicgarden.fun">Rosabel</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://magicgarden.fun/2026/05/25/AtCoder001/">https://magicgarden.fun/2026/05/25/AtCoder001/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://magicgarden.fun" target="_blank">Magic Garden</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/atcoder.png" data-sites="x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2026/05/21/diary001/" title="日记 [001]"><img class="cover" src="/img/diary_1.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">日记 [001]</div></div><div class="info-2"><div class="info-item-1">壹5 月 22 日，中雨。 其实这篇文章的地址昨天就有了，但是今天才开始写。 有一些关于我本人的经历，应该会在 关于 一栏里面详细说说，这里就不提了。 下了快一个月的雨，买菜都出不去。 昨晚被蚊子吵的睡不着，起来用灭蚊拍消灭了五六只。 上午嗯和牢哥去楼下扔垃圾。 </div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Children-Yearn-for-the-Evil-Kindergarten"><span class="toc-number">1.</span> <span class="toc-text">Children Yearn for the Evil Kindergarten</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url(/img/background3.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2026 By Rosabel</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script><div class="js-pjax"><script>(async () => {
+  const showKatex = () => {
+    document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
+  }
+
+  if (!window.katex_js_css) {
+    window.katex_js_css = true
+    await btf.getCSS('https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css')
+    if (true) {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/contrib/copy-tex.min.js')
+    }
+  }
+
+  showKatex()
+})()</script></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
