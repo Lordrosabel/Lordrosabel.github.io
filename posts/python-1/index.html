@@ -1,0 +1,225 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><link rel="stylesheet" href="/css/custom.css"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Python 语言入门 | Magic Garden</title><meta name="author" content="Rosabel,3794223737@qq.com"><meta name="copyright" content="Rosabel"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="Python 语言入门">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 语言入门">
+<meta property="og:url" content="https://magicgarden.fun/posts/python-1/index.html">
+<meta property="og:site_name" content="Magic Garden">
+<meta property="og:description" content="Python 语言入门">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://magicgarden.fun/img/Rosabel/%E7%BC%96%E7%A0%81.png">
+<meta property="article:published_time" content="2026-07-05T00:42:18.000Z">
+<meta property="article:modified_time" content="2026-07-05T00:42:18.000Z">
+<meta property="article:author" content="Rosabel">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://magicgarden.fun/img/Rosabel/%E7%BC%96%E7%A0%81.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Python 语言入门",
+  "url": "https://magicgarden.fun/posts/python-1/",
+  "image": "https://magicgarden.fun/img/Rosabel/%E7%BC%96%E7%A0%81.png",
+  "datePublished": "2026-07-05T00:42:18.000Z",
+  "dateModified": "2026-07-05T00:42:18.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Rosabel",
+      "url": "https://magicgarden.fun"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://magicgarden.fun/posts/python-1/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'medium_zoom',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Python 语言入门',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap" rel="stylesheet"><style> body,.post-content,p,li{font-family:"Titillium Web","Source Han Sans CN","PingFang SC",sans-serif!important;line-height:1.75;} h1,h2,h3,h4,h5,h6{font-family:"Alibaba PuHuiTi","Noto Serif SC","Source Han Serif CN",serif!important;font-weight:600;} pre,code,.hljs{font-family:Consolas,"Sarasa Fixed SC",monospace!important;} </style><style>:root {
+  --theme-color: #36D399 !important;
+  --theme-color-hover: #28B67E !important;
+  --btn-color: #36D399 !important;
+}
+* {
+  --heo-theme: #36D399 !important;
+}</style><meta name="generator" content="Hexo 7.3.0"></head><body><div class="bg-animation" id="web_bg" style="background-image: url(/img/Rosabel/%E8%83%8C%E6%99%AF.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/Rosabel.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-code"></i><span> 编程(算法)</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/algorithm/"><i class="fa-fw fas fa-sitemap"></i><span> 算法</span></a></li><li><a class="site-page child" href="/math/"><i class="fa-fw fas fa-calculator"></i><span> 数学</span></a></li><li><a class="site-page child" href="/codeforces/"><i class="fa-fw fas fa-chart-bar"></i><span> CF</span></a></li><li><a class="site-page child" href="/atcoder/"><i class="fa-fw fas fa-terminal"></i><span> AT</span></a></li><li><a class="site-page child" href="/icpc/"><i class="fa-fw fas fa-trophy"></i><span> ICPC</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-code-branch"></i><span> 编程(工程)</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/python/"><i class="fa-fw fas fa-file-code"></i><span> Python</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-edit"></i><span> 说说</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/diary/"><i class="fa-fw fas fa-book"></i><span> 日记</span></a></li><li><a class="site-page child" href="/travelogue/"><i class="fa-fw fas fa-map-marked-alt"></i><span> 游记</span></a></li><li><a class="site-page child" href="/chatter/"><i class="fa-fw fas fa-pen-nib"></i><span> 杂谈</span></a></li><li><a class="site-page child" href="/xianhua/"><i class="fa-fw fas fa-comment"></i><span> 闲话</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-list"></i><span> 友链</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-address-card"></i><span> 其他</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li><li><a class="site-page child" href="/history/"><i class="fa-fw fas fa-history"></i><span> 历史</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/Rosabel/%E7%BC%96%E7%A0%81.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/img/logo.png" alt="Logo"><span class="site-name">Magic Garden</span></a><a class="nav-page-title" href="/"><span class="site-name">Python 语言入门</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-code"></i><span> 编程(算法)</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/algorithm/"><i class="fa-fw fas fa-sitemap"></i><span> 算法</span></a></li><li><a class="site-page child" href="/math/"><i class="fa-fw fas fa-calculator"></i><span> 数学</span></a></li><li><a class="site-page child" href="/codeforces/"><i class="fa-fw fas fa-chart-bar"></i><span> CF</span></a></li><li><a class="site-page child" href="/atcoder/"><i class="fa-fw fas fa-terminal"></i><span> AT</span></a></li><li><a class="site-page child" href="/icpc/"><i class="fa-fw fas fa-trophy"></i><span> ICPC</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-code-branch"></i><span> 编程(工程)</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/python/"><i class="fa-fw fas fa-file-code"></i><span> Python</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-edit"></i><span> 说说</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/diary/"><i class="fa-fw fas fa-book"></i><span> 日记</span></a></li><li><a class="site-page child" href="/travelogue/"><i class="fa-fw fas fa-map-marked-alt"></i><span> 游记</span></a></li><li><a class="site-page child" href="/chatter/"><i class="fa-fw fas fa-pen-nib"></i><span> 杂谈</span></a></li><li><a class="site-page child" href="/xianhua/"><i class="fa-fw fas fa-comment"></i><span> 闲话</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-list"></i><span> 友链</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-address-card"></i><span> 其他</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li><li><a class="site-page child" href="/history/"><i class="fa-fw fas fa-history"></i><span> 历史</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Python 语言入门</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-07-05T00:42:18.000Z" title="发表于 2026-07-05 08:42:18">2026-07-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-07-05T00:42:18.000Z" title="更新于 2026-07-05 08:42:18">2026-07-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%B7%A5%E7%A8%8B/">工程</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%B7%A5%E7%A8%8B/Python/">Python</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">475</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="1-运行程序">1 运行程序</h2>
+<p>比如下面的例子 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="monospace">message.py</mtext></mrow><annotation encoding="application/x-tex">\texttt{message.py}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6528em;vertical-align:-0.2222em;"></span><span class="mord text"><span class="mord texttt">message.py</span></span></span></span></span>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">message = <span class="string">&quot;Hello Python world!&quot;</span></span><br><span class="line"><span class="built_in">print</span>(message)</span><br></pre></td></tr></table></figure>
+<p>，在菜单栏运行如下指令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python message.py</span><br></pre></td></tr></table></figure>
+<p>。</p>
+<h2 id="2-字符串">2 字符串</h2>
+<h3 id="2-1-内置大小写函数">2.1 内置大小写函数</h3>
+<p>观察下面的程序 \texttt{name_cases.py}：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&quot;EriC&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(name.lower())</span><br><span class="line"><span class="built_in">print</span>(name.upper())</span><br><span class="line"><span class="built_in">print</span>(name.title())</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(name)</span><br></pre></td></tr></table></figure>
+<p>，输出：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">eric</span><br><span class="line">ERIC</span><br><span class="line">Eric</span><br><span class="line">EriC</span><br></pre></td></tr></table></figure>
+<p>。说明这三个函数分别的作用是：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>.lower()</mtext></mrow><annotation encoding="application/x-tex">\text{.lower()}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">.lower()</span></span></span></span></span>：将字符串全部转为小写。</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>.upper()</mtext></mrow><annotation encoding="application/x-tex">\text{.upper()}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">.upper()</span></span></span></span></span>：将字符串全部转为大写。</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>.title()</mtext></mrow><annotation encoding="application/x-tex">\text{.title()}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">.title()</span></span></span></span></span>：将字符串转为首字母大写，其余小写。</li>
+</ul>
+<div class="note warning flat"><p>注意：这三个内嵌函数全部为<strong>临时副本</strong>，即输出不会改变原字符串内容。</p>
+</div>
+<h3 id="2-2-f-字符串">2.2 f 字符串</h3>
+<p><strong>f 字符串</strong>可在一个字符串中插入变量的值。如下面的例子 \texttt{full_name.py}：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">first_name = <span class="string">&quot;Sakura&quot;</span></span><br><span class="line">last_name = <span class="string">&quot;Nagumo&quot;</span></span><br><span class="line">full_name = <span class="string">f&quot;<span class="subst">&#123;first_name&#125;</span> <span class="subst">&#123;last_name&#125;</span>&quot;</span></span><br><span class="line"><span class="built_in">print</span>(full_name)</span><br></pre></td></tr></table></figure>
+<p>。f 字符串在一个字符串中插入变量时，在左引号前加入字母 <code>f</code>，然后在对应位置加入 <code>&#123;变量名&#125;</code>。此程序输出的结果为 <code>Sakura Nagumo</code>。</p>
+<h3 id="2-3-删除空白与前后缀">2.3 删除空白与前后缀</h3>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>.lstrip()</mtext></mrow><annotation encoding="application/x-tex">\text{.lstrip()}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">.lstrip()</span></span></span></span></span>：删除字符串左段空白。</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>.rstrip()</mtext></mrow><annotation encoding="application/x-tex">\text{.rstrip()}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">.rstrip()</span></span></span></span></span>：删除字符串右段空白。</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>.strip()</mtext></mrow><annotation encoding="application/x-tex">\text{.strip()}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">.strip()</span></span></span></span></span>：删除字符串<strong>左右</strong>段空白。</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>.removeprefix(S)</mtext></mrow><annotation encoding="application/x-tex">\text{.removeprefix(S)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">.removeprefix(S)</span></span></span></span></span>：删除为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>S</mtext></mrow><annotation encoding="application/x-tex">\text{S}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord text"><span class="mord">S</span></span></span></span></span> 的前缀。</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>.removesuffix(S)</mtext></mrow><annotation encoding="application/x-tex">\text{.removesuffix(S)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">.removesuffix(S)</span></span></span></span></span>：删除为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>S</mtext></mrow><annotation encoding="application/x-tex">\text{S}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord text"><span class="mord">S</span></span></span></span></span> 的后缀。</li>
+</ul>
+<h2 id="3-列表">3 列表</h2>
+<h3 id="3-1-修改、添加和删除元素">3.1 修改、添加和删除元素</h3>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>A[idx] = v</mtext></mrow><annotation encoding="application/x-tex">\text{A[idx] = v}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">A[idx] = v</span></span></span></span></span>：将列表 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>A</mtext></mrow><annotation encoding="application/x-tex">\text{A}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord text"><span class="mord">A</span></span></span></span></span> 下标为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">idx</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">i</span><span class="mord mathnormal">d</span><span class="mord mathnormal">x</span></span></span></span> 的元素值<strong>永久性修改</strong>为值 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">v</span></span></span></span>。</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>A.append(v)</mtext></mrow><annotation encoding="application/x-tex">\text{A.append(v)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">A.append(v)</span></span></span></span></span>：将元素 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">v</span></span></span></span> <strong>永久性添加</strong>到列表 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>A</mtext></mrow><annotation encoding="application/x-tex">\text{A}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord text"><span class="mord">A</span></span></span></span></span> 的末尾，不改变其他元素值。</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>A.insert(idx, v)</mtext></mrow><annotation encoding="application/x-tex">\text{A.insert(idx, v)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">A.insert(idx, v)</span></span></span></span></span>：将元素 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">v</span></span></span></span> <strong>永久性添加</strong> 到列表 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>A</mtext></mrow><annotation encoding="application/x-tex">\text{A}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord text"><span class="mord">A</span></span></span></span></span> 下标 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">idx</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">i</span><span class="mord mathnormal">d</span><span class="mord mathnormal">x</span></span></span></span> 处。</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://magicgarden.fun">Rosabel</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://magicgarden.fun/posts/python-1/">https://magicgarden.fun/posts/python-1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://magicgarden.fun" target="_blank">Magic Garden</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/Rosabel/%E7%BC%96%E7%A0%81.png" data-sites="x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/posts/diary002/" title="日记 [002]"><img class="cover" src="/img/Rosabel/%E6%97%A5%E8%AE%B0.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">日记 [002]</div></div><div class="info-2"><div class="info-item-1">烈阳，寒心。</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F"><span class="toc-text">1 运行程序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">2 字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%86%85%E7%BD%AE%E5%A4%A7%E5%B0%8F%E5%86%99%E5%87%BD%E6%95%B0"><span class="toc-text">2.1 内置大小写函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-f-%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">2.2 f 字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E5%88%A0%E9%99%A4%E7%A9%BA%E7%99%BD%E4%B8%8E%E5%89%8D%E5%90%8E%E7%BC%80"><span class="toc-text">2.3 删除空白与前后缀</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%88%97%E8%A1%A8"><span class="toc-text">3 列表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E4%BF%AE%E6%94%B9%E3%80%81%E6%B7%BB%E5%8A%A0%E5%92%8C%E5%88%A0%E9%99%A4%E5%85%83%E7%B4%A0"><span class="toc-text">3.1 修改、添加和删除元素</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url(/img/background.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2026 By Rosabel</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script><div class="js-pjax"><script>(async () => {
+  const showKatex = () => {
+    document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
+  }
+
+  if (!window.katex_js_css) {
+    window.katex_js_css = true
+    await btf.getCSS('https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css')
+    if (true) {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/contrib/copy-tex.min.js')
+    }
+  }
+
+  showKatex()
+})()</script></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
